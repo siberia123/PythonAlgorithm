@@ -23,7 +23,7 @@ MST_cost = 0
 
 for edge in edges:
 	parent_a = find_root(edge[0])
-	parent_b = find_root(edge[1])\
+	parent_b = find_root(edge[1])
 # if parent_a == parent_b,it represents node1 and node2 have the same root.so they will be cyclic,continue
 	if parent_a != parent_b:
 		MST_cost += edge[2]
