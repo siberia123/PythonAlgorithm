@@ -10,10 +10,15 @@ edges = sorted(edges,key=lambda edge: edge[2])
 
 parent = [-1 for i in range(NUM_E)]
 # initially,we assume that all vertices are roots,so parent's values are all -1
-# parent(list) is storing the root of every vertices
+# parent:list is storing the root of every vertices
 # if parent[vertices] == -1,it represents vertices is root
 # if parent[vertices] != -1, it represents vertices is connected with parent[vertices] then keep finding its root
-
+# for example:
+# 0  1  2 3 4  5
+#-1  2 -1 4 5 -1
+# parent[0] = -1,it represents its root is itself,parent[1] = 2 it represents it connects with vertices 2,
+# from parent[3]=4, parent[4]=5,parent[5]=-1,we can judge vertices 5 is root of vertices 3,4
+# as you see vertices 0,2,5 they belong to different trees because their values of parent is -1
 def find_root(vertices):
 	if parent[vertices] != -1:
 		vertices = find_root(parent[vertices])
