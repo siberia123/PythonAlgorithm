@@ -56,5 +56,3 @@ if __name__ == '__main__':
 			   [INF, 6, 4, INF, 5],
 			   [2, 3, 4, 5, INF]]
 	g.prim()
-
-
