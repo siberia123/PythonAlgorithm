@@ -9,8 +9,9 @@ for edge in range(NUM_E):
 edges = sorted(edges,key=lambda edge: edge[2])
 
 parent = [-1 for i in range(NUM_E)]
+# initially,we assume that all vertices are roots,so parent's values are all -1
 # parent(list) is storing the root of every vertices
-# if parent[vertices] == -1,it represents vertices is the root
+# if parent[vertices] == -1,it represents vertices is root
 # if parent[vertices] != -1, it represents vertices is connected with parent[vertices] then keep finding its root
 
 def find_root(vertices):
