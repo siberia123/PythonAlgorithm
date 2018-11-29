@@ -21,6 +21,10 @@ def minVertices(visit, shortestDist):
 			minVertexID = i
 	return minVertexID
 
+def printDijkstra(shortestDist):
+	print('最短路径长度：')
+	for i in range(1,len(shortestDist)):
+		print(chr(97),'-',chr(97+i),':',shortestDist[i])
 
 def Dijkstra(Graph):
 	visited = [False for num in range(len(Graph))]
@@ -33,6 +37,7 @@ def Dijkstra(Graph):
 			if visited[v] == False and shortestDist[v] > Graph[minVertexID][v] + shortestDist[minVertexID] and \
 					Graph[minVertexID][v] != INF:
 				shortestDist[v] = Graph[minVertexID][v] + shortestDist[minVertexID]
+	printDijkstra(shortestDist)
 	print(shortestDist)
 
 
@@ -46,5 +51,5 @@ if __name__ == '__main__':
 	for i in range(NUM_E):
 		source, destination, weight = map(int, input('Please input Edge and its Weight:').split())
 		Graph[source][destination] = weight
-		Graph[destination][source] = weight
+		#Graph[destination][source] = weight
 	Dijkstra(Graph)
